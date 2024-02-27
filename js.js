@@ -1,7 +1,4 @@
-"use strict";
-
-window.addEventListener('DOMContentLoaded', () => {
-  console.log("DOM loaded")
+console.log("connected")
 
 /* Для тегов на игроках */
 function checkPlayers() {
@@ -332,5 +329,3 @@ function runEveryFewSeconds(functionsToRun) {
 }
 
 runEveryFewSeconds([checkPlayers, assignHandNameClasses, setupAvatarClickCopy]);
-
-});
