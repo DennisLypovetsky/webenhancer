@@ -1,3 +1,6 @@
+window.addEventListener('DOMContentLoaded', () => {
+  
+
 /* Для тегов на игроках */
 function checkPlayers() {
 
@@ -327,3 +330,5 @@ function runEveryFewSeconds(functionsToRun) {
 }
 
 runEveryFewSeconds([checkPlayers, assignHandNameClasses, setupAvatarClickCopy]);
+
+});
