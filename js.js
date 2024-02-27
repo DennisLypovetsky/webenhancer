@@ -1,4 +1,4 @@
-console.log("connected");
+console.log("module connected");
 
 /* Для тегов на игроках */
 function checkPlayers() {
