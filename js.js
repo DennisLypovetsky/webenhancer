@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  
+  console.log("DOM loaded")
 
 /* Для тегов на игроках */
 function checkPlayers() {
