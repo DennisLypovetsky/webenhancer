@@ -1,0 +1,302 @@
+/*============ HAND NAME ===============*/
+._wrapper_6iyj2_11 div[data-type='hand-name'] {
+  zoom: 1.5;
+  transform: translate(-50%, 50%);
+  background: #fefefa; /*#2778c4;*/
+  color: #000;
+  
+  transition: background 0.5s ease;
+}
+
+/*======= Цветовая градация для hand-name =======*/
+div[data-type='hand-name'].high-card {
+  background: #fefefa;
+  /*color: gray;*/
+}
+
+div[data-type='hand-name'].pair {
+  background: #dbd7d2;
+}
+
+div[data-type='hand-name'].two-pair {
+  background: #fdee00;
+}
+
+div[data-type='hand-name'].three-of-a-kind {
+  background: #8a2be2;
+  color: #fff;
+}
+
+div[data-type='hand-name'].straight {
+  background: #00ffff;
+}
+
+div[data-type='hand-name'].flush {
+  background: #007fff;
+}
+
+div[data-type='hand-name'].full-house {
+  background: #ff4f00;
+}
+
+div[data-type='hand-name'].four-of-a-kind {
+  background: #ff00ff;
+}
+
+div[data-type='hand-name'].straight-flush {
+  background: #0000ff;
+  color: #fff;
+}
+
+div[data-type='hand-name'].royal-flush {
+  background: #3b00db;
+  color: #fff;
+}
+
+/*======= подсветка активного игрока =========*/
+div[class*='_active_'] {
+  /*box-shadow: 0 0 1.25em #ffffff, 0 0 0.9375em #ffffff, -1px 3px 2em #ffffff;*/
+  box-shadow: unset;
+  /*zoom: 1.3;*/
+  /*transform: scale(1.3);*/
+  /*box-shadow: unset;*/
+  /*border: 5px solid #fff;*/
+  /*border-style: outset;*/
+  outline: 5px solid #fff;
+  /*transition: outline-color 1s ease-in-out;*/
+}
+div[class*='_active_']._outline_red_6iyj2_135 {
+  outline: 5px solid yellow;
+}
+
+/*===========подсветка победителя===============*/
+._outline_gold_6iyj2_124 {
+  position: relative;
+  z-index: 1000;
+  
+  box-shadow: 0 0 1.25em #ffffff, 0 0 0.9375em #ffffff, -1px 3px 2em #ffffff;
+  zoom: 1.3;
+}
+
+/*======= Размер ставок и чеков  =========*/
+div[data-chip='bet'] {
+  zoom: 1.3;
+  z-index: 11;
+}
+div[data-chip='check'] {
+  zoom: 1.1;
+  z-index: 11;
+}
+
+/*======= аватар =========*/
+._avatar_1wtry_1:hover {
+  cursor: pointer;
+}
+._avatar_1wtry_1:active {
+  border: 3px solid yellow;
+}
+
+/*======= имена =========*/
+._info_ipfwp_38 {
+  /* родительский контейнер */
+  align-items: flex-start;
+}
+._name_ipfwp_66 {
+  /*position: absolute;*/
+  z-index: 1000;
+  background: #000;
+  overflow: unset;
+}
+._name_ipfwp_66:hover {
+  background: darkviolet;
+}
+._name_ipfwp_66:active {
+  background: yellow;
+}
+
+/*=======  деньги  =========*/
+/*._money_ipfwp_83 {*/
+/*	margin-top: 1.25em;*/
+/*}*/
+
+/*=======  Теги 2.0  =========*/
+._name_ipfwp_66 ~ .tag {
+  position: relative;
+
+  display: inline;
+  order: -1;
+  margin-top: -1em;
+  width: auto;
+
+  line-height: 1;
+
+  border-radius: 0 0 10% 10%;
+  
+  &:hover {
+    cursor: help;
+  }
+}
+
+.TAG ~ .tag {
+  background: orange;
+}
+
+.ABC ~ .tag {
+  content: 'ABC';
+  background: blue;
+}
+
+.fish ~ .tag {
+  content: 'fish';
+  background: #878701;
+}
+
+.whale ~ .tag {
+  content: 'whale';
+  background: violet;
+}
+
+.orca ~ .tag {
+  content: 'orca';
+  background: darkviolet;
+}
+
+.maniac ~ .tag {
+  content: 'maniac';
+  background: red;
+}
+
+/*=======  Индикатор нотса  =========*/
+.tag:not([title=''])::after {
+  position: absolute;
+  top: 1px;
+  right: -0.7em;
+  content: '*';
+  color: white;
+}
+
+/*======= МЕНЯЕМ ФОН ЕСЛИ ДЕЙСТВИЕ =========*/
+#root {
+  /*background: url(/assets/bg-6000a876.jpg) #44450D;*/
+  background: #0d0d0d;
+  transition: background 0.5s ease-in-out;
+}
+
+#root:has(
+    [data-slot-index='0'][data-type='sit']._active_6iyj2_171._outline_green_6iyj2_127
+  ) {
+  background: #403d23;
+}
+
+#root:has(
+    [data-slot-index='0'][data-type='sit']._active_6iyj2_171._outline_red_6iyj2_135
+  ) {
+  background: #490025;
+}
+
+/*======= Точка-индикатор =========*/
+#root::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 1rem;
+  z-index: -1;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: block;
+  background: transparent;
+  transition: background 0.25s ease-out;
+  
+  @media screen and (max-width: 1101px) {
+    top: 5rem;
+  }
+}
+
+#root:has([data-slot-index='0'][data-type='sit'] > [data-type='card']):not(
+    :has(.__disabled_mfoq8_65)
+  )::after {
+  background: green;
+  z-index: 10000;
+}
+
+#root:has([data-slot-index='0'][data-type='sit']._active_6iyj2_171)::after {
+  background: yellow;
+  z-index: 10000;
+}
+
+#root:has(
+    [data-slot-index='0'][data-type='sit']._outline_red_6iyj2_135
+  )::after {
+  background: red;
+  z-index: 10000;
+}
+
+/*======= Высота чата =========*/
+._container_to6ok_1:not([data-role='popper-content']) {
+  height: 40.25rem;
+}
+
+/*======= Кнопки =========*/
+button[data-action]:active {
+  background: #900c3f;
+}
+
+/*======== potSize ========*/
+#potCalc {
+  position: fixed;
+  top: 5rem;
+  left: 6.25rem;
+  overflow: hidden;
+  z-index: 1000;
+
+  max-height: 3rem;
+  padding: 0.8125rem;
+
+  background: radial-gradient(
+    42% 42% at 50.56% 100%,
+    rgba(255, 238, 149, 0) 0%,
+    rgba(255, 238, 149, 0) 100%
+  );
+  backdrop-filter: blur(2.5px);
+  border: 1px solid rgba(237, 255, 163, 0.3);
+  border-radius: 0.625rem;
+  
+  transition: max-height 0.15s ease-in-out;
+  
+  @media screen and (max-width: 1101px) {
+    left: 1rem;
+  }
+}
+#root:has(._bet__input_21mb1_198) ~ #potCalc { /* выезжает, когда ставка */
+  max-height: 6.4rem;
+  
+  &:hover {
+    max-height: unset;
+  }
+}
+#potCalc:hover {
+  max-height: unset;
+}
+#potSize {
+  opacity: 0.9;
+  // border-bottom: 1px solid #999;
+  margin-bottom: 1rem;
+}
+.potCalcContainerElement:not(#potSize) {
+  opacity: 0.5;
+}
+.potCalcContainerElement:not(#potSize):hover,
+#potSize:hover {
+  opacity: 1;
+}
+
+/*======= pop-up ========*/
+._modal_qau40_1.__with_backdrop_qau40_9:before {
+  backdrop-filter: blur(0.5px);
+}
+// ._modal_37i1g_1 [data-role=modal-wrap]
+._modal__wrap_qau40_46 {
+  top: 40%;
+}
